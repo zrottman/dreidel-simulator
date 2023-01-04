@@ -78,3 +78,12 @@ class Player():
         pot.update(amt)
         self.bankroll.update(-amt)
 
+    
+    def get_name(self):
+        """
+        Returns player name.
+
+        Returns:
+            str: Player name.
+        """
+        return self.name
