@@ -1,4 +1,4 @@
-from fund import Fund
+from src.fund import Fund
 from math import ceil
 
 class Player():
@@ -38,9 +38,6 @@ class Player():
         if spin_result not in ['hay', 'shin', 'gimmel', 'nun']:
             raise ValueError("Invalid spin result: {}".format(spin_result))
 
-        # Append spin to history
-        self.add_to_history(spin_result)
-
         # Take pot action
         if spin_result == 'shin': # Player puts 1 in
             self._update_pot(1, pot)
@@ -65,7 +62,7 @@ class Player():
         self._update_pot(amt, pot)
 
 
-    def _udpate_pot(self, amt, pot):
+    def _update_pot(self, amt, pot):
         """
         Increment or decrement pot value and player bankroll by amt.
 
@@ -75,7 +72,7 @@ class Player():
         """
 
         # Validate amt
-        If not isinstance(amt, int):
+        if not isinstance(amt, (int)):
             raise ValueError("Invalid amound: {}".format(amt))
         
         pot.update(amt)
