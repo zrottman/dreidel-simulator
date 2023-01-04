@@ -1,5 +1,5 @@
 import unittest
-from fund import Fund
+from src.fund import Fund
 
 class TestFund(unittest.TestCase):
     """Tests for the class Fund."""
