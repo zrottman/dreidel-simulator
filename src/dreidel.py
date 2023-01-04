@@ -1,29 +1,67 @@
 import random
 
 class Dreidel():
-    """Class to handle dreidel functions."""
+    """
+    A class that represents a dreidel, which holds four dreidel faces
+    and a spin history.
+
+    Attributes:
+        faces (arr): List of dreidel faces
+        history (arr): List of spin history. Each list item is a list
+            containing [spin_number, player_name, result]
+        spin_count (int): Current number of spins
+    """
 
     def __init__(self):
-        """Initialize dreidel."""
+        """
+        Initialize a new Driedel object.
+        """
         self.faces = ['shin', 'nun', 'gimmel', 'hay']
         self.history = []
-        self.face_counts = {}
+        self.spin_count = 0
+
 
     def spin(self, player):
-        """Append random selection from dreidel faces to spin history."""
+        """
+        Spin dreidel, append result to history, and return result.
+
+        Args:
+            player (obj): Player object who is spinning.
+
+        Returns:
+            str: Name of dreidel face that results.
+       """
+
+        # Increment spin_count
+        self.spin_count += 1
+
+        # Get spin result
         result = random.choice(self.faces)
-        self.history.append((player, result))
-        self.face_counts[result] = self.face_counts.get(result, 0) + 1
+
+        # Add spin details to history
+        spin_number = self.get_current_spin_count()
+        player_name = player.get_name()
+        self.history.append([spin_number, player_name, result])
+
         return result
 
+
     def get_history(self):
-        """Return spin history."""
+        """
+        Return spin history.
+
+        Returns:
+            arr: List of spin history.
+        """
+
         return self.history
 
-    def get_last_spin(self):
-        """Return most recent spin."""
-        return self.get_history()[-1]
+    def get_current_spin_count(self):
+        """
+        Returns current spin count.
 
-    def get_spins_count(self):
-        """Return number of spins."""
-        return len(self.get_history())
+        Returns:
+            int: Spin count
+        """
+        
+        return self.spin_count
