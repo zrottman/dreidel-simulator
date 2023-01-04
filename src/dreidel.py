@@ -21,7 +21,7 @@ class Dreidel():
         self.spin_count = 0
 
 
-    def spin(self, player):
+    def spin(self, player_name):
         """
         Spin dreidel, append result to history, and return result.
 
@@ -40,7 +40,6 @@ class Dreidel():
 
         # Add spin details to history
         spin_number = self.get_current_spin_count()
-        player_name = player.get_name()
         self.history.append([spin_number, player_name, result])
 
         return result

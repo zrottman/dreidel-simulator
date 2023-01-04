@@ -67,5 +67,6 @@ class TestDreidel(unittest.TestCase):
             self.assertEqual(event[1], 'player1')
             self.assertIn(event[2], ['hay', 'shin', 'gimmel', 'nun'])
 
+
 if __name__ == '__main__':
     unittest.main()
