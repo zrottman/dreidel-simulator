@@ -69,9 +69,9 @@ def write_to_file(sim_results, path):
 if __name__ == '__main__':
 
     # Define params
-    starting_bank_params = range(5, 10)
-    num_players_params = range(3, 6)
-    num_sims = 3
+    starting_bank_params = range(1, 5)
+    num_players_params = range(2, 3)
+    num_sims = 1000
 
     # Run simulation
     sim_results = simulate(num_players_params, starting_bank_params, num_sims)
