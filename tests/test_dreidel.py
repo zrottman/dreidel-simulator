@@ -25,7 +25,7 @@ class TestDreidel(unittest.TestCase):
         Test single dreidel spin.
         """
         # Spin dreidel and store result
-        result = self.dreidel.spin(self.player)
+        result = self.dreidel.spin(self.player.get_name())
         spin_count = self.dreidel.get_current_spin_count()
         history_length = len(self.dreidel.get_history())
 
@@ -46,7 +46,7 @@ class TestDreidel(unittest.TestCase):
         # Spin dreidel five times
         results = []
         for i in range(5):
-            results.append(self.dreidel.spin(self.player))
+            results.append(self.dreidel.spin(self.player.get_name()))
         spin_count = self.dreidel.get_current_spin_count()
         history = self.dreidel.get_history()
         history_length = len(history)

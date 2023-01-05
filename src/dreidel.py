@@ -31,6 +31,10 @@ class Dreidel():
         Returns:
             str: Name of dreidel face that results.
        """
+        
+        # Vaildate player_name
+        if not isinstance(player_name, str):
+            raise TypeError('player_name passed must be string.')
 
         # Increment spin_count
         self.spin_count += 1
