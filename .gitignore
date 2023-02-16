@@ -3,3 +3,4 @@ __pycache__
 
 # Ignore generate  datasets
 data/
+projectimages/
